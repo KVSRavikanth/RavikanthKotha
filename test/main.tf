@@ -5,10 +5,12 @@ provider "azurerm" { features {
 }
 
 module "network" {
-  source              = "./modules/network"
-  region              = var.region
-  vnet_name           = var.vnet_name
-  subnet_configuration = var.subnet_configuration
+  source              = "../modules/network"
+  rg_location         = "EastUS"
+  vnet_name           = "TestVNET"
+  rg_name             = "TestRG"
+  nsg_name            = "TestNSG"
+  env_name            = "Test"
 }
 
 module "firewall" {
