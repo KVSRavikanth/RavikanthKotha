@@ -1,0 +1,98 @@
+Section 1 
+Q1: The Activequote Azure Production subscription costs have increased from £98,000 in February 2023 to £124,000 in March 2023. Explain the steps you would take, the tools you would use, and the data you would gather to investigate the reasons for this £26,000 increase.
+    Initial Assessment:
+
+    Azure Cost Management and Billing: Begin by using the Azure Cost Management and Billing tool. This will give a detailed breakdown of expenditure and allow comparison between the previous and current months.
+    Service and Resource Comparison: Compare the cost of each Azure resource (VMs, storage, databases, etc.) for February and March.
+    Detailed Analysis:
+
+    Resource Utilization: Review the utilization of the most expensive resources. High utilization or over-provisioning can lead to higher costs.
+    Service Additions or Upgrades: Check if there were any new services, upgrades in service plans, or region changes that caused the cost increase.
+    Anomaly Detection: Look for any anomalies or unusual spikes in the cost graph. Azure also provides cost alerts and anomaly detection.
+    Data Collection:
+
+    Azure Cost and Usage Reports: Download detailed cost and usage reports for both February and March.
+    Resource Tagging: Ensure resources are tagged properly (e.g., by department, environment). This helps in identifying which areas or teams contributed to the cost increase.
+    Root Cause Identification:
+
+    Diagnostic Logs: Review diagnostic and activity logs to check for any deployment changes, or scaling activities.
+    Consult with Teams: Talk to relevant teams to understand any business operations or project activities that might have influenced the cost.
+    Recommendations:
+
+    Cost Optimization: Suggest cost optimization strategies such as rightsizing, reserved instances, or auto-scaling configurations.
+    Regular Monitoring: Implement regular cost reviews and set up Azure cost alerts to catch future discrepancies early.
+Q2: You are tasked with designing a cloud infrastructure that is highly available, scalable, secure, and performant. What are your key technical considerations for this project, and how would you ensure that the infrastructure meets SLAs and KPIs?
+    Key Technical Considerations:
+
+    Availability: Use Azure Availability Zones and Availability Sets to ensure high availability. Implementing auto-scaling and load balancing can also help - Scalability: Design with elasticity in mind. Use services like Azure App Service, Azure Kubernetes Service (AKS), or Azure Functions which support automatic scaling.
+    Security: Implement Azure Security Center recommendations, use Network Security Groups (NSGs), Azure Firewall, and Azure Key Vault for secrets management.
+    Performance: Utilize Azure Monitor and Application Insights for performance monitoring. Ensure optimal configurations for databases and VMs, and implement caching strategies using Azure Redis Cache.
+    Disaster Recovery: Plan for disaster recovery using Azure Site Recovery and geo-redundant storage options.
+    Governance and Compliance: Use Azure Policy and Azure Blueprints to enforce compliance with standards and governance across the infrastructure.
+    Ensuring SLAs and KPIs:
+
+    SLAs: Leverage Azure's built-in SLAs for services and ensure redundancy to meet uptime requirements. Regularly review service-specific SLAs.
+    KPIs:
+    Uptime: Monitor service uptime using Azure Monitor and set up alerts for any downtime.
+    Response Time: Measure and optimize response times through Application Insights.
+    Error Rates: Track errors and exceptions to ensure a low error rate.
+    Performance Metrics: Monitor CPU, memory, and disk usage.
+    Continuous Improvement: Implement a feedback loop with continuous monitoring, using the gathered metrics to make data-driven decisions and improvements.
+Q3: You are the technical lead on a team of cloud engineers who are responsible for migrating Azure Virtual Machines hosting IIS and SQL to Azure cloud-native resource types. What are the key challenges that you would anticipate, and how would you ensure minimal disruption and maximum benefit for the organization?
+    Key Challenges:
+
+    Compatibility: Ensuring that the applications are compatible with cloud-native services (Azure App Service, Azure SQL Database).
+    Data Migration: Ensuring data integrity while migrating databases from VMs to Azure SQL.
+    Downtime: Minimizing downtime during the migration process.
+    Configuration Management: Replicating the configurations of the applications and databases in the new environment.
+    Team Readiness: Ensuring that the team is well-versed with the new services.
+    Security Policies: Adapting existing security policies to the new infrastructure.
+    Ensuring Minimal Disruption and Maximum Benefit:
+
+    Assessment and Planning - Assessment and Planning: Conduct a thorough assessment of the existing setup, including application dependencies, database sizes, and performance metrics. Develop a detailed migration plan with a clear timeline.
+    Proof of Concept (PoC): Create a PoC to test the migration process and identify potential issues without affecting production.
+    Phased Migration: Perform the migration in phases, starting with non-critical applications/services to ensure that any issues can be resolved without significant impact.
+    Backup Strategy: Implement a robust backup strategy to ensure data can be restored in case of any issues during the migration.
+    Testing: Conduct comprehensive testing after each migration phase to ensure applications are functioning correctly. This includes functional, performance, and security testing.
+    Automation: Use tools like Azure Migrate for VM migration and Azure Database Migration Service for database migration to automate and thus speed up the process while minimizing human error.
+    Monitoring and Alerts: Set up monitoring and alerting to quickly detect and respond to any issues post-migration.
+    Communication Plan: Keep stakeholders informed about the migration process and any potential impact on services to manage expectations and reduce disruptions.
+Q4: You are responsible for managing and monitoring app services in a cloud environment. How would you apply DevOps principles and tools to automate and streamline processes, and what metrics would you use to measure the effectiveness of your approach?
+    Applying DevOps Principles and Tools:
+
+    Infrastructure as Code (IaC): Use Terraform or ARM templates for provisioning and managing cloud resources.
+    Continuous Integration/Continuous Deployment (CI/CD): Implement CI/CD pipelines using Azure DevOps to automate the build, test, and deployment processes.
+    Configuration Management: Use tools like Ansible or Chef to manage and configure application settings and environments.
+    Monitoring and Logging: Set up comprehensive monitoring and logging using Azure Monitor, Log Analytics, and Application Insights to track application performance and identify issues.
+    Automated Testing: Incorporate automated testing (unit, integration, and functional tests) into the CI/CD pipelines to catch issues early in the development cycle.
+    Feedback Loops: Implement feedback loops to continuously improve the development process, using data from monitoring tools and user feedback.
+    Metrics for Measuring Effectiveness:
+
+    Deployment Frequency: How often new code is deployed to production.
+    Lead Time for Changes: The time it takes for a committed code change to be deployed to production.
+    Change Failure Rate: The percentage of changes that result in a failure in production.
+    Mean Time to Recovery (MTTR): The time it takes to recover from a failure in production.
+    Application Performance Metrics: Response times, error rates, and throughput.
+    User Engagement Metrics: User satisfaction scores, page load times, and interaction rates.
+
+Q5: The ActiveQuote website has been performing poorly, and after investigating the issue, it is decided that there is a bottleneck caused by the SKU deployed in the solution. What steps would you undertake in order to change the SKU?
+    Assessment and Planning:
+
+    Performance Analysis: Conduct a detailed performance analysis to confirm that the SKU is the bottleneck.
+    SKU Options: Review available SKU options that meet the required performance criteria.
+    Impact Analysis: Evaluate the impact of changing the SKU on cost, compatibility, and overall performance.
+    Execution Steps:
+
+    Backup: Ensure that the current state of the environment and data is backed up.
+    Testing: Create a test environment to validate the new SKU. Ensure it meets performance requirements without compromising functionality.
+    Change Management: Follow the organization’s change management process. Document the change, obtain approvals, and ensure all stakeholders are informed.
+    Implementation:
+
+    Downtime Minimization: Schedule the SKU change during a maintenance window to minimize disruption.
+    Execution: Change the SKU in the test environment first, and monitor its behavior. Once validated, proceed with the production environment.
+    Monitoring: Monitor system performance closely following the change to ensure that the issue has been resolved and no new issues have been introduced.
+    Post-Change Review:
+
+    Performance Validation: Continuously monitor key performance indicators post-change to ensure that the performance issues are resolved.
+    Cost Review: Ensure the new SKU is cost-effective and within budget constraints.
+    Stakeholder Feedback: Collect feedback from stakeholders and users to verify that the performance improvement meets expectations.
